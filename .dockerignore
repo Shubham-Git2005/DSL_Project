@@ -1,0 +1,13 @@
+.git
+.env
+.venv
+.venv-prototype
+__pycache__
+**/__pycache__
+.pytest_cache
+.impeccable
+prototype/data
+prototype/models
+prototype/evaluation
+*.pkl
+HIdeme.txt

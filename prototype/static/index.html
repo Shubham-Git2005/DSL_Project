@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evidence-first workspace for understanding your projects, experience, and next steps.">
+  <meta name="theme-color" content="#f6f7f4">
+  <title>SkillsBridge — Evidence workspace</title>
+  <link rel="icon" href="/static/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to workspace</a>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+ <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 19c-.6 1 .2 2 1.3 2h13.4c1.1 0 1.9-1 1.3-2L14 9V3M7 14h10"/></symbol>
+ <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+ <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+ <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12c5 3 13 3 18 0M10 13v3h4v-3"/></symbol>
+ <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8 14-2 7 6-3 6 3-2-7"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H7l-4 3V5a2 2 0 0 1 2-2h8a8 8 0 0 1 8 8Z"/><path d="M7 8h10M7 12h7"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+ <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+ <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+ <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1-5-2-7-2m14 5v-4c0-1-.4-2-1-2.5 3-.3 6-1.4 6-6a5 5 0 0 0-1.4-3.5A5 5 0 0 0 19.5 2S18 1.5 15 3a13 13 0 0 0-6 0C6 1.5 4.5 2 4.5 2a5 5 0 0 0-.1 4A5 5 0 0 0 3 9.5c0 4.6 3 5.7 6 6-.6.5-1 1.5-1 2.5v4"/></symbol>
+</svg>
+<aside class="sidebar">
+ <a href="#workspace" class="brand"><img src="/static/brand.svg" width="30" height="30" alt=""><span>skillsbridge<span class="brand-period">.</span></span></a>
+ <div class="workspace-label">PERSONAL WORKSPACE</div>
+ <nav aria-label="Main navigation">
+  <button class="nav-item active" data-view="workspace" aria-current="page"><svg><use href="#i-grid"/></svg>Overview</button>
+  <button class="nav-item" data-view="history"><svg><use href="#i-clock"/></svg>Assessment history<span class="nav-count" id="history-count">0</span></button>
+  <button class="nav-item" data-view="models"><svg><use href="#i-lab"/></svg>Model lab</button>
+  <button class="nav-item" data-view="api"><svg><use href="#i-code"/></svg>API & integration</button>
+ </nav>
+ <div class="sidebar-note"><span class="tiny-line"></span><p>Better evidence.<br>Clearer next steps.</p><span>Built around your actual work.</span></div>
+ <button class="profile-button" id="settings-button"><span class="avatar">SP</span><span>My workspace<small>Local prototype</small></span><svg><use href="#i-settings"/></svg></button>
+</aside>
+<div class="app-shell">
+ <header class="topbar"><div class="breadcrumbs">Workspace <svg><use href="#i-chevron"/></svg><span id="page-crumb">Overview</span></div><div class="topbar-right"><span class="connection" id="connection-status">Connecting</span><a class="text-link" href="/docs" target="_blank" rel="noopener">API docs <span aria-hidden="true">↗</span></a></div></header>
+ <main id="main" tabindex="-1">
+  <div id="global-error" class="message error" role="alert" hidden></div>
+  <section id="view-workspace" class="view">
+   <div class="page-heading"><div><h1>Your work, in perspective.</h1><p>Understand what your experience demonstrates.<br class="desktop-break"> Find the evidence. Choose your next step.</p></div><button class="button secondary" id="example-button"><svg><use href="#i-file"/></svg>Explore an example</button></div>
+   <div class="workspace-grid">
+    <div class="primary-column">
+     <section class="profile-panel surface">
+      <div class="panel-header"><h2>Your readiness profile</h2><span class="badge muted">Evidence first</span></div>
+      <div id="example-notice" class="demo-note example-notice" hidden>Synthetic example profile · Edit it to explore the workflow. It is not a real student record.</div>
+      <form id="assessment-form">
+       <div class="profile-fields">
+        <label>Student name<input id="student-name" name="student_name" placeholder="Your full name" required minlength="2" maxlength="100" autocomplete="name"></label>
+        <label>Target role<select id="target-role" name="target_role"><option value="junior_backend">Junior backend developer</option><option value="junior_frontend">Junior frontend developer</option><option value="junior_data">Junior data analyst</option></select></label>
+       </div>
+       <details class="measured-details"><summary>Academic & assessment scores <span>Optional</span><svg><use href="#i-chevron"/></svg></summary><div class="score-inputs"><label>CGPA <span>out of 10</span><input id="cgpa" type="number" min="0" max="10" step="0.01" placeholder="8.2"></label><label>Coding <span>out of 100</span><input id="coding-score" type="number" min="0" max="100" step="0.1" placeholder="68"></label><label>Communication <span>out of 100</span><input id="communication-score" type="number" min="0" max="100" step="0.1" placeholder="72"></label></div><p class="field-hint">Use recorded assessment results. Unavailable scores stay unknown.</p></details>
+       <div class="evidence-heading"><div><h3>Evidence collection <span id="evidence-count" class="inline-count">0</span></h3><p>The substance behind your profile.</p></div><button type="button" class="button small secondary" id="add-evidence"><svg><use href="#i-plus"/></svg>Add evidence</button></div>
+       <div id="evidence-list"></div>
+       <div id="evidence-empty" class="evidence-empty"><div class="empty-file"><svg><use href="#i-file"/></svg></div><h3>Start with something you built.</h3><p>Add a project, an internship, or an assessment.<br>Include concrete examples of your own contribution.</p><button type="button" class="text-button" id="first-evidence">Add your first evidence <svg><use href="#i-arrow"/></svg></button></div>
+       <div class="import-row"><button type="button" class="text-button subtle" id="github-toggle"><svg><use href="#i-github"/></svg>Import a GitHub README</button><span>or</span><button type="button" class="text-button subtle file-trigger" id="file-trigger">Attach a text file</button><input type="file" id="file-import" accept=".txt,.md,.py,.js,.ts,.tsx,.jsx,.java,.sql,.csv" hidden></div>
+       <div id="github-import" class="inline-import" hidden><label for="github-repo">Repository <span>owner/repository</span></label><div><input id="github-repo" placeholder="your-name/your-project"><button type="button" class="button small" id="github-fetch">Import README</button></div><p>Imports source text only. Code, ownership, and deployment remain unverified.</p></div>
+       <div id="form-error" class="message error" role="alert" hidden></div>
+       <div class="form-bottom"><label class="evaluator-select"><span>Evaluator</span><select id="evaluator"><option value="auto">Automatic</option><option value="offline">Offline text scan</option><option value="llm">Semantic LLM</option></select></label><button type="submit" class="button primary" id="run-button">Assess my evidence<svg><use href="#i-arrow"/></svg></button></div>
+      </form>
+     </section>
+     <section id="processing-panel" class="surface processing-panel" aria-live="polite" hidden><div class="processing-title"><span class="pulse-dot"></span><h2>Reading your evidence</h2></div><p id="processing-text">Your assessment is queued.</p><div class="skeleton"></div><div class="skeleton short"></div><button class="text-button" id="check-status">Check status</button></section>
+     <section id="report-panel" class="surface report-panel" hidden></section>
+    </div>
+    <aside class="context-column">
+     <section class="guide-panel"><div class="guide-mark" aria-hidden="true"><span></span><span></span><span></span></div><h2>Quality has context.</h2><p>A shipped feature says more than a job title. A working test says more than a repository count.</p><p>We look for what your evidence actually supports, and make uncertainty visible.</p><div class="guide-footer"><svg><use href="#i-check"/></svg>Grounded in your evidence</div></section>
+     <section class="status-panel"><h3>Workspace status</h3><div><span>Evidence evaluator</span><span id="evaluator-status" class="badge muted">Checking</span></div><div><span>Readiness model</span><span id="model-status" class="badge muted">Checking</span></div><p id="status-explanation">Checking available capabilities.</p><button class="text-button" data-view="models">View model lab <svg><use href="#i-arrow"/></svg></button></section>
+     <section class="how-panel"><h3>A useful assessment starts here</h3><ol><li><span>1</span><div><strong>Add concrete evidence</strong><p>Show the work and your contribution.</p></div></li><li><span>2</span><div><strong>Review the findings</strong><p>Every judgement needs a source.</p></div></li><li><span>3</span><div><strong>Close the evidence gaps</strong><p>Choose a specific next step.</p></div></li></ol></section>
+    </aside>
+   </div>
+  </section>
+  <section id="view-history" class="view" hidden><div class="page-heading"><div><h1>Your assessment history.</h1><p>Revisit the evidence, findings, and next steps.</p></div><button class="button" data-view="workspace">New assessment<svg><use href="#i-plus"/></svg></button></div><div class="surface history-surface"><div class="table-toolbar"><label class="search-field">Search assessments<input id="history-search" type="search" placeholder="Search by student name"></label><button class="button secondary small" id="refresh-history">Refresh</button></div><div id="history-list"></div></div></section>
+  <section id="view-models" class="view" hidden><div class="page-heading"><div><h1>Trust is a measured result.</h1><p>Evaluator capability and predictive accuracy are different things.</p></div><span class="badge muted">Model lab</span></div><div id="model-content"></div></section>
+  <section id="view-api" class="view" hidden><div class="page-heading"><div><h1>Built to fit your project.</h1><p>A versioned API, from evidence submission to a complete report.</p></div><a class="button secondary" href="/docs" target="_blank" rel="noopener">Open interactive docs <span aria-hidden="true">↗</span></a></div><div class="api-grid"><section class="surface api-intro"><h2>One assessment. A clear contract.</h2><p>Submit a student profile and evidence. Receive an assessment ID, check its status, then retrieve the report.</p><div class="endpoint"><span>POST</span><code>/v2/assessments</code></div><div class="endpoint"><span>GET</span><code>/v2/assessments/{id}</code></div><div class="endpoint"><span>GET</span><code>/v2/assessments/{id}/report</code></div><div class="endpoint"><span>POST</span><code>/v2/assessments/{id}/reviews</code></div><div class="endpoint"><span>DELETE</span><code>/v2/assessments/{id}</code></div><p class="field-hint">Set SKILLSBRIDGE_API_KEY before network deployment. Send it as X-API-Key. Configure explicit CORS origins for another frontend.</p><button class="text-button" id="api-settings">Configure API access <svg><use href="#i-arrow"/></svg></button></section><section class="code-panel"><div class="code-heading"><span>Python · httpx</span><button class="copy-button" id="copy-code">Copy</button></div><pre><code id="integration-code"></code></pre></section></div><section class="surface api-notes"><h2>A predictable response</h2><p>Reports include the evaluator mode, rubric version, evidence hashes, grounded findings, limitations, and readiness model status. A missing model returns an explicit unavailable state, never a made up percentage.</p><div class="api-links"><a href="/openapi.json" target="_blank" rel="noopener">OpenAPI schema ↗</a><a href="/health" target="_blank" rel="noopener">Health endpoint ↗</a></div></section></section>
+ </main>
+ <footer><span>SkillsBridge <span class="footer-dot">·</span> An evidence workspace</span><span>Prototype <span class="footer-dot">·</span> For guidance and human review</span></footer>
+</div>
+<dialog id="settings-dialog"><form id="settings-form"><div class="dialog-heading"><h2>Workspace access</h2><button type="button" class="icon-button" id="close-settings" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div><p>This prototype uses one shared workspace. An optional API key protects access; it is not a multiuser login.</p><label>API key<input id="api-key" type="password" autocomplete="off" placeholder="Leave blank for local development"></label><p class="field-hint">Kept in memory for this page only. Evaluator provider keys belong on the server.</p><button class="button" type="submit">Apply & reconnect</button></form></dialog>
+<dialog id="delete-dialog"><h2>Delete this assessment?</h2><p>The stored profile, evidence, report, and review note will be removed from this workspace.</p><div class="dialog-actions"><button class="button secondary" id="cancel-delete">Keep assessment</button><button class="button danger" id="confirm-delete">Delete assessment</button></div></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

@@ -14,9 +14,10 @@ Predicts a student's placement readiness (0-100%) from academic, project, certif
 - **Known limitation — feature coverage:** The dataset captures static academic-record fields (CGPA, internship/certification counts). It does NOT capture live platform activity (GitHub commit history, Codeforces/CodeChef contest performance, LinkedIn engagement) that the broader SkillsBridge vision depends on. This model should be treated as a prototype/baseline, to be retrained on real scraped activity data before production use.
 
 ## Evaluation
-- Metrics: Accuracy, Precision, Recall, F1, ROC-AUC (see notebook Cell 8 comparison table).
-- Class imbalance was addressed via SMOTE during training only (not applied to the test set).
-- Calibration was verified via reliability curve (notebook Cell 9) — probabilities should be interpreted with this calibration in mind.
+- The checked-in Colab notebook previously reported binary metrics (`[:, 1]`, binary precision/recall/F1, and binary ROC-AUC) even though the deployed artifact contains three classes. Those numbers are not a valid basis for an accuracy claim.
+- The notebook now fails fast when the uploaded dataset does not contain the six declared training columns, reports the label mapping, evaluates balanced accuracy plus macro and weighted F1, and tunes XGBoost against multiclass macro F1.
+- Calibration uses sigmoid calibration and reports held-out multiclass log loss. Calibration is not a substitute for an untouched external validation set.
+- No new model is promoted from this repository revision because the CSV uploaded in Colab is not present in the repository. Re-training without that exact data would be irreproducible and could silently produce an artifact with a different feature schema.
 
 ## Fairness Considerations
 - If the dataset contains any demographic fields (gender, category, region, college tier), a subgroup performance audit (e.g., via Fairlearn) should be run before deployment to check for disparate error rates. Not yet performed in this version — flagged as required follow-up before production rollout.
@@ -31,6 +32,7 @@ Predicts a student's placement readiness (0-100%) from academic, project, certif
 3. Run a fairness audit if demographic columns exist.
 4. Set up drift monitoring (e.g., Evidently AI) once live traffic begins, to detect when the model's assumptions stop matching new student cohorts.
 5. Periodically retrain as new placement cycles complete, using MLflow's run history to compare each new model against the currently deployed one before promoting it.
+6. Reconcile the six-feature schema in `SkillsBridge_Production_Notebook.ipynb` with the current deployed artifact's fourteen-feature schema before retraining. They are not interchangeable.
 
 ## Maintainers
 SkillsBridge/SentinelAI project team — [Shubham et al.], final-year BE-IT project.

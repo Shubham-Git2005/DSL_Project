@@ -1,0 +1,13 @@
+{
+  "student_name": "Sample: substantial internship",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {
+      "kind": "internship",
+      "title": "Order import and reconciliation internship",
+      "content": "During a twelve-week internship I owned an order import feature. I designed idempotency keys, implemented validation and retries, and added integration tests for duplicate uploads and partial failures. I compared a database transaction with an asynchronous outbox and documented why the bounded transaction was sufficient for the import size. A senior engineer reviewed the implementation before internal release. I also added structured error logs and a rollback checklist. The account describes substantive work, but supervisor confirmation, code reviews, load-test results, and release records are not supplied."
+    }
+  ]
+}

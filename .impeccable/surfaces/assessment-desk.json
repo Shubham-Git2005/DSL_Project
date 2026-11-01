@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T00:00:00Z",
+  "title": "SkillsBridge assessment desk",
+  "scope": {
+    "mode": "Operate",
+    "implementation": [
+      "prototype/static/index.html",
+      "prototype/static/style.css",
+      "prototype/static/app.js"
+    ],
+    "designContract": "DESIGN.md",
+    "method": "Source inspection; browser review artifacts are maintained separately.",
+    "publication": "Local prototype; this file does not establish deployed hosting."
+  },
+  "extensions": {
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 24px 80px #23362926",
+        "purpose": "Native modal interruption."
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 24px #18332224",
+        "purpose": "Status feedback over workspace."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.22,1,.36,1)"
+      },
+      {
+        "name": "state-transition",
+        "value": "180ms"
+      },
+      {
+        "name": "view-enter",
+        "value": "220ms; opacity .65 to 1; translateY 5px to 0"
+      },
+      {
+        "name": "processing-pulse",
+        "value": "1.5s ease-in-out infinite"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "Animations and transitions disabled; automatic scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width:1500px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "max-width:1180px"
+      },
+      {
+        "name": "stacked-workspace",
+        "value": "max-width:980px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width:700px"
+      }
+    ],
+    "focus": {
+      "keyboard": "3px solid #6b9479; outline-offset:3px",
+      "field": "border-color:#64836e; outline:2px solid #64836e22; outline-offset:0"
+    },
+    "statusTreatments": {
+      "warning": "background:#f6efdf;color:#735a27",
+      "failed": "background:#f9e8e4;color:var(--danger)",
+      "error": "border:1px solid #e4cfcb;background:#fff6f2;color:#943d2c"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The assessment submission action.",
+      "html": "<button class=\"ds-button\">Assess my evidence</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:8px;background:var(--green,#214b3c);color:#fff;padding:12px 16px;font:500 14px/20px Geist,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.22,1,.36,1),transform 180ms cubic-bezier(.22,1,.36,1)}.ds-button:hover{background:var(--green-hover,#173b2e)}.ds-button:focus-visible{outline:3px solid #6b9479;outline-offset:3px}.ds-button:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Supporting actions such as example loading.",
+      "html": "<button class=\"ds-button ds-secondary\">Explore an example</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:8px;background:var(--green,#214b3c);color:#fff;padding:12px 16px;font:500 14px/20px Geist,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.22,1,.36,1),transform 180ms cubic-bezier(.22,1,.36,1)}.ds-button:hover{background:var(--green-hover,#173b2e)}.ds-button:focus-visible{outline:3px solid #6b9479;outline-offset:3px}.ds-button:active{transform:translateY(1px)}.ds-secondary{background:#fff;color:var(--ink,#242e29);border-color:var(--line,#e1e5df)}.ds-secondary:hover{background:var(--soft,#f0f3ed);border-color:#c6d1c3}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Visible label and quiet complete border.",
+      "html": "<label class=\"ds-label\">Student name<input class=\"ds-input\" placeholder=\"Your full name\"></label>",
+      "css": ".ds-label{display:block;color:var(--ink,#242e29);font:500 12px Geist,ui-sans-serif,system-ui,sans-serif}.ds-input{display:block;width:100%;margin-top:8px;border:1px solid #dce2da;border-radius:8px;background:#fff;color:var(--ink,#242e29);padding:12px;font:400 12px Geist,ui-sans-serif,system-ui,sans-serif;caret-color:var(--green,#214b3c);transition:border-color 180ms cubic-bezier(.22,1,.36,1),box-shadow 180ms cubic-bezier(.22,1,.36,1)}.ds-input::placeholder{color:#737d75}.ds-input:focus{border-color:#64836e;outline:2px solid #64836e22;outline-offset:0}"
+    },
+    {
+      "name": "Navigation item",
+      "kind": "nav",
+      "description": "Desktop active page treatment; mobile becomes an underline.",
+      "html": "<nav aria-label=\"Main navigation\"><button class=\"ds-nav\" aria-current=\"page\">Overview</button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;min-height:44px;text-align:left;border:0;border-radius:8px;padding:12px;background:#e7eee3;color:var(--green,#214b3c);font:600 12px Geist,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.22,1,.36,1),color 180ms cubic-bezier(.22,1,.36,1)}.ds-nav:hover{background:var(--soft,#f0f3ed);color:var(--ink,#242e29)}.ds-nav:focus-visible{outline:3px solid #6b9479;outline-offset:3px}.ds-nav:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Evidence badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Noninteractive status label; meaning remains textual.",
+      "html": "<span class=\"ds-badge\">Supported by source</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;justify-content:center;font:500 10px/16px Geist,ui-sans-serif,system-ui,sans-serif;white-space:nowrap;border-radius:4px;padding:2px 8px;background:var(--mint,#e6eee5);color:var(--green,#214b3c)}"
+    },
+    {
+      "name": "Working surface",
+      "kind": "card",
+      "refersTo": "surface",
+      "description": "Flat bounded form/report container.",
+      "html": "<section class=\"ds-surface\"><h2 class=\"ds-title\">Your readiness profile</h2></section>",
+      "css": ".ds-surface{background:var(--surface,#fff);border:1px solid var(--line,#e1e5df);border-radius:12px;overflow:hidden;padding:24px}.ds-title{margin:0;color:var(--ink,#242e29);font:600 18px/28px Geist,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.025em}"
+    }
+  ],
+  "surfaceBehavior": {
+    "views": [
+      "Overview",
+      "Assessment history",
+      "Model lab",
+      "API & integration"
+    ],
+    "evidence": "Up to 12 inline disclosure editors with category, title, source text, optional source URL and removal. Adding focuses the title; removal returns focus to Add evidence.",
+    "imports": "GitHub README text and a keyboard-operable local text file trigger. Source text is student supplied; ownership/code/deployment are not verified. Files limited to 96 KB and 24000 characters; binary NUL rejected.",
+    "syntheticExample": "Loading the example reveals a persistent synthetic notice. Edits preserve synthetic_example provenance in submission. Example reports repeat the disclosure.",
+    "evaluation": "Automatic, Offline text scan and Semantic LLM choices. Explicit semantic choice is rejected when not configured. Connection, evaluator capability and model availability have separate labels.",
+    "processing": "Queued/processing live text; polling every 1400ms; manual Check status after timeout or request error. Busy submission is disabled.",
+    "report": "Inline report with evaluator badge, readiness reason, artifact summaries, textual experience tiers and reasons, optional source quotes, findings and next steps. First artifact is open. Rendering focuses report h2 and announces completion.",
+    "review": "Inline review note saved to the workspace; UI explicitly states no notification is sent.",
+    "export": "Report JSON download.",
+    "history": "Name search, refresh, report reopening/status polling, native delete confirmation.",
+    "modelLab": "Awaiting-labels state plus conditional experimental-model data rendering. No available replacement model or measured accuracy is established by these conditional UI branches.",
+    "integration": "Endpoint list, origin-specific Python/httpx sample, clipboard copy, API docs/schema/health links.",
+    "workspaceAccess": "Native modal accepts optional API key stored in page memory only. Provider credentials are server-side. One shared workspace, not a multiuser login.",
+    "responsiveCaveat": "Mobile hides the sidebar profile/settings entry; workspace access is reachable from API & integration."
+  },
+  "truthBoundary": [
+    "No real labelled dataset supplied.",
+    "No validated trained replacement readiness model established.",
+    "No live provider credentials supplied.",
+    "No hosting publication performed.",
+    "Offline scanning is not semantic quality judgement or ability verification.",
+    "Evidence support is distinct from independent verification."
+  ],
+  "narrative": {
+    "northStar": "An assessment desk",
+    "overview": "A clear reading surface, compact navigation, evidence arranged as a ledger, and an inline report. This is the shipped Operate-mode prototype: the student's source material carries the visual interest. White working surfaces sit on a quiet near-white canvas, with ink typography and restrained green states.\n\nThis document refreshes the existing direction contract against `prototype/static/index.html`, `style.css`, and `app.js`. It describes the implemented interface, not validated model performance or a published service. Durable product truth remains in PRODUCT.md; surface behavior and implementation extensions are recorded in `.impeccable/surfaces/assessment-desk.json`.",
+    "keyCharacteristics": [
+      "Evidence and uncertainty remain readable together.",
+      "Complete quiet borders define flat working surfaces.",
+      "Inline editing and expansion keep source context close.",
+      "Small, functional state changes respect reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Status Truth Rule",
+        "body": "Green connection status means the workspace connected; evaluator capability and readiness-model status remain separate labelled facts.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do keep source quotations, uncertainty, and evidence status close to findings.",
+      "Do preserve visible keyboard focus and native disclosure/dialog behavior.",
+      "Do distinguish synthetic examples, offline scanning, semantic assessment, and model availability.",
+      "Do use flat bordered working surfaces and reserve shadows for dialogs and toasts."
+    ],
+    "donts": [
+      "Don't add fabricated accuracy, readiness percentages, decorative charts, or score rings.",
+      "Don't replace evidence with stock imagery, glass effects, or background gradients.",
+      "Don't imply that a review request sends a notification or that workspace access is a multiuser login.",
+      "Don't claim real labels, a trained replacement model, configured live provider credentials, or published hosting from this UI."
+    ]
+  }
+}

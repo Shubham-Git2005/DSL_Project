@@ -1,0 +1,13 @@
+{
+  "student_name": "Sample: applied backend work",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {
+      "kind": "project",
+      "title": "Laboratory booking API",
+      "content": "I implemented an API to reserve laboratory equipment. My own contribution includes input validation, authentication middleware, and reservation conflict checks. I chose PostgreSQL transactions to prevent two users reserving the same item simultaneously. I wrote integration tests for overlapping reservations and expired tokens. I deployed a demonstration instance. The repository, recorded test results, and deployment logs are not attached, so these are self-reported claims."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "student_name": "Aarav Deshmukh",
+  "target_role": "junior_backend",
+  "cgpa": 8.2,
+  "communication_score": 72,
+  "coding_score": 68,
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {"kind": "project", "title": "Campus equipment exchange", "content": "I built a Python API for students to lend laboratory equipment. My contribution was authentication, reservation conflict checks, and PostgreSQL schema design. I implemented integration tests for overlapping bookings and expired tokens using pytest. The app was deployed to a college test server. Usage and production reliability have not been independently verified."},
+    {"kind": "internship", "title": "Backend engineering internship", "content": "During a ten-week internship, I implemented a CSV import endpoint with validation and error reporting. I was responsible for the endpoint and worked with a mentor on database transactions. A senior engineer reviewed my changes before they were shipped internally. Supervisor confirmation and review records have not been attached."},
+    {"kind": "certification", "title": "Database foundations course", "content": "Completed a database foundations course covering SQL joins, normalization, and indexes. The course included an assessed final project. Credential verification and the final project submission are not attached. This is self-reported course completion, not independent proof of database expertise."},
+    {"kind": "coding", "title": "Coding practice and assessment", "content": "Student reports regular algorithm practice and a mock coding assessment result of 68 out of 100. Implemented solutions involving hash maps and binary search during the mock interview. An independent score sheet and contest history have not been attached."},
+    {"kind": "communication", "title": "Technical presentation feedback", "content": "Presented the equipment exchange project to a faculty panel. Feedback described a structured explanation of the API, but requested a clearer account of database trade-offs. Communication score: 72 out of 100, reported by the student. The original rubric and signed feedback are not attached."}
+  ]
+}

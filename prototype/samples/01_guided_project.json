@@ -1,0 +1,13 @@
+{
+  "student_name": "Sample: guided project",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {
+      "kind": "project",
+      "title": "Guided notes API",
+      "content": "I followed a tutorial to build a notes API with create, read, update, and delete endpoints. I changed the field names and added one optional category field. The tutorial supplied the database schema and error handling. I have not written automated tests, deployed the application, or made independent architecture decisions. The app currently runs only on my laptop."
+    }
+  ]
+}

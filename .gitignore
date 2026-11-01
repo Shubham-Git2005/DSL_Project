@@ -1,0 +1,12 @@
+# Local prototype secrets, evidence, and generated models
+.env
+prototype/data/
+prototype/models/
+prototype/evaluation/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.venv-prototype/
+node_modules/
+.impeccable/review/

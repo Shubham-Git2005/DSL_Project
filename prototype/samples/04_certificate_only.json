@@ -1,0 +1,13 @@
+{
+  "student_name": "Sample: certificate with little evidence",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {
+      "kind": "certification",
+      "title": "Database course completion",
+      "content": "I completed an online database course and received a completion certificate. The title mentions SQL foundations. I have not supplied the issuer verification page, syllabus, assessment format, graded work, or a related project. The certificate title alone does not show whether I can design a schema or debug a query."
+    }
+  ]
+}

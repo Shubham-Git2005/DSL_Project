@@ -1,0 +1,7 @@
+{
+  "student_name": "Sample: missing evidence",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": []
+}

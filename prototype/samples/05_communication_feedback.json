@@ -1,0 +1,13 @@
+{
+  "student_name": "Sample: communication feedback",
+  "target_role": "junior_backend",
+  "evaluator": "auto",
+  "dataset_origin": "synthetic_example",
+  "evidence": [
+    {
+      "kind": "communication",
+      "title": "Technical explanation feedback",
+      "content": "Assessor feedback: the student explained the API request flow in a clear sequence and used an appropriate example. When asked about database transactions, the student repeated a definition but could not explain the failure case. The answer was understandable but did not justify the design trade-off. This is synthetic feedback for testing, not an actual recorded interview."
+    }
+  ]
+}
